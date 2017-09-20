@@ -1,0 +1,13 @@
+-------------------------------------------------------------------------------
+Test set: info.fightnews.tests.HomePageTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 6.909 sec <<< FAILURE! - in info.fightnews.tests.HomePageTest
+info.fightnews.tests.HomePageTest  Time elapsed: 6.827 sec  <<< ERROR!
+org.openqa.selenium.remote.UnreachableBrowserException: 
+Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure.
+Build info: version: '2.53.1', revision: 'a36b8b1cd5757287168e54b817830adce9b0158d', time: '2016-06-30 19:26:09'
+System info: host: 'nb-112', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '4.4.0-81-generic', java.version: '1.8.0_121'
+Driver info: driver.version: RemoteWebDriver
+Caused by: org.apache.http.conn.HttpHostConnectException: Connect to localhost:4444 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused (Connection refused)
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+

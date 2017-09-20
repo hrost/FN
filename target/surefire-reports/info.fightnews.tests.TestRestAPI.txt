@@ -1,0 +1,13 @@
+-------------------------------------------------------------------------------
+Test set: info.fightnews.tests.TestRestAPI
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 248.184 sec <<< FAILURE! - in info.fightnews.tests.TestRestAPI
+basicPingTest(info.fightnews.tests.TestRestAPI)  Time elapsed: 188.469 sec  <<< FAILURE!
+java.lang.AssertionError: 
+1 expectation failed.
+JSON path id doesn't match.
+Expected: <2>
+  Actual: 1
+
+	at info.fightnews.tests.TestRestAPI.basicPingTest(TestRestAPI.java:23)
+
