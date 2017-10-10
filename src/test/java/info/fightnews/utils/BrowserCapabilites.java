@@ -1,5 +1,6 @@
 package info.fightnews.utils;
 
+import io.github.bonigarcia.wdm.ChromeDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -19,22 +20,23 @@ public class BrowserCapabilites {
     public static DesiredCapabilities capabilities = new DesiredCapabilities();
 
 
-    public static WebDriver setCapabilites(String browser, WebDriver e_driver) {
-        EventFiringWebDriver driver = null;
+    public static WebDriver setCapabilites(String browser, WebDriver driver) {
+        //EventFiringWebDriver driver = null;
         switch (browser) {
             case "firefox":
-                //e_driver = new FirefoxDriver(capabilities.firefox());
-                try {
-                    e_driver = new RemoteWebDriver(
-                            new URL("http://localhost:4444/wd/hub"),
-                            capabilities.firefox());
-                } catch (MalformedURLException e) {
-                    e.printStackTrace();
-                }
+               driver = new FirefoxDriver(capabilities.firefox());
+//                try {
+//                    e_driver = new RemoteWebDriver(
+//                            new URL("http://localhost:4444/wd/hub"),
+//                            capabilities.firefox());
+//                } catch (MalformedURLException e) {
+//                    e.printStackTrace();
+//                }
             case "chrome":
                 ChromeOptions options = new ChromeOptions();
-                System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
-                e_driver = new ChromeDriver(options);
+                System.setProperty("webdriver.chrome.driver", "src\\test\\resources\\chromedriver");
+                ChromeDriverManager.getInstance().setup();
+                driver = new ChromeDriver(options);
                 /*try {
                     e_driver = new RemoteWebDriver(
                             new URL("http://localhost:4444/wd/hub"),
@@ -43,8 +45,8 @@ public class BrowserCapabilites {
                     e.printStackTrace();
                 }*/
         }
-        driver = new EventFiringWebDriver(e_driver);
-        driver.register(new WebDriverLogger());
+//        driver = new EventFiringWebDriver(e_driver);
+//        driver.register(new WebDriverLogger());
         return driver;
     }
 }
