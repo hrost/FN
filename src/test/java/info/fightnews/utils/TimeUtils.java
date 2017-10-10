@@ -11,7 +11,7 @@ import static info.fightnews.webtestbase.WebDriverFactory.getDriver;
  * Created by mlukianenko on 5/15/17.
  */
 public class TimeUtils {
-    private static final int GLOBAL_WAIT = 60;
+    private static final int GLOBAL_WAIT = 10;
 
     public static void waitForElementDisplayed(final WebElement element, int... timeoutInSeconds) {
 
